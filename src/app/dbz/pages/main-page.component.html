@@ -1,0 +1,52 @@
+<h1> DBZ Personajes </h1>
+<hr>
+
+<div class="row">
+  <div class="col">
+
+    <!-- ponemos aqui el arreglo de tipo character
+    con la interface que definimos characters
+    las llaves cuadradas son atributos[]
+    y para eventos () para escuchar
+     -->
+
+<!--
+<dbz-list [characterList]="dbzService.characters"
+  (onDelete)="dbzService.onDeleteCharacter($event)">
+</dbz-list>
+</div>
+-->
+
+<!-- eliminando por id quitando el dbzService porque le pusimos los getters para que sea privado y no public.
+eliminando por id
+<dbz-list [characterList]="dbzService.characters"
+ (onDelete)="dbzService.deleteCharaterById($event)" >
+</dbz-list>
+</div>
+-->
+
+
+
+<!-- cambiamos dbzService.deleteCharaterById por onDeleteCharacter-->
+<!-- eliminando por id-->
+<dbz-list [characterList]="characters"
+(onDelete)="onDeleteCharacter($event)" >
+</dbz-list>
+</div>
+
+
+<div class="col">
+
+
+<!-- aqui pegamos el {{ characters }}
+para mosstrarlo en la pagina -->
+characters
+
+  <!-- (ngSubmit)con parentesis indica escuchar eventos onNewCharacter()
+    $event recibe el valor emitido de onNewCharacter
+  -->
+  <!--cambiamos dbzService.onNewCharacter por el nuevo metodo para llamarlo y redidercionalo -->
+ <dbz-add-character (onNewCharacter)="onNewCharacter($event)" ></dbz-add-character>
+
+</div>
+</div>

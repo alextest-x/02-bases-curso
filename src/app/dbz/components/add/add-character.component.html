@@ -1,0 +1,33 @@
+<h4>Agregar personaje</h4>
+
+
+  <!-- (ngSubmit)con parentesis indica escucha eventos
+  -->
+
+
+<form  class="row" (ngSubmit)="emitCharacter()">
+
+  <!-- [()] se asocia un evento y un  atributo al mismo tiempo
+      es two way-databinding  [([(ngModel)]="binding")] donde binding es character.name
+  -->
+  <input
+  type="text"
+  [(ngModel)] ="character.name"
+   name="name"
+   class="form-control mb-2"
+   placeholder="nombre" />
+
+  <input
+  type="number"
+  [(ngModel)] ="character.power"
+  name="power"
+  class="form-control mb-2"
+  placeholder="poder"/>
+
+  <button type="submit" class="btn btn-primary">Agregar</button>
+
+
+<!-- envia en formato json
+<pre>{{ character | json }}</pre>
+-->
+</form>
